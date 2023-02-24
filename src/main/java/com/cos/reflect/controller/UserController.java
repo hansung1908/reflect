@@ -3,6 +3,7 @@ package com.cos.reflect.controller;
 import com.cos.reflect.anno.RequestMappping;
 import com.cos.reflect.controller.dto.JoinDto;
 import com.cos.reflect.controller.dto.LoginDto;
+import com.cos.reflect.model.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,12 +19,21 @@ public class UserController {
     @RequestMappping("/join")
     public String join(JoinDto dto) {
         System.out.println("join() 실행");
+        System.out.println(dto);
         return "index";
     }
 
     @RequestMappping("/login")
     public String login(LoginDto dto) {
         System.out.println("login() 실행");
+        System.out.println(dto);
+        return "index";
+    }
+
+    @RequestMappping("/list")
+    public String list(User user) {
+        System.out.println("list() 실행");
+        System.out.println(user);
         return "index";
     }
 
